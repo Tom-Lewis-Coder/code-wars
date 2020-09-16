@@ -5,7 +5,7 @@ const peopleWithAgeDrink = (age) => {
     return "drink coke"  
   } else if (age < 21) { 
     return "drink beer"
-  } else if (age >= 21) { 
-    return "drink whiskey"
   }
+
+  return drink whiskey
 }
