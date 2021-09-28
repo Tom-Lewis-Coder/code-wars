@@ -25,7 +25,7 @@ Note: Gratipay's codebase is open source, try to resist the temptation to cheat!
 
 function getFeaturedProjects (allProjects) {
   let pop = allProjects.filter(o => o.nreceiving_from > 5)                           
-  let unp =  allProjects.filter(o => o.nreceiving_from <= 5)
+  let unp = allProjects.filter(o => o.nreceiving_from <= 5)
   Array.prototype.push.apply(pop, unp)
   return pop.length < 10 ? pop :
   [].concat(pop.slice(0,7),pop.slice(pop.length - 3, pop.length)).sort(() => 0.5 - Math.random())
