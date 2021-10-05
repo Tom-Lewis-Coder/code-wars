@@ -1,0 +1,10 @@
+const daysRepresented = trips => {
+      let dates = trips.map((a) => { 
+      let dates = []
+      for (let i = a[0]; i <= a[1]; i++) {
+         dates.push(i)
+      }
+       return dates 
+      })            
+       return [...new Set([].concat(...dates))].length
+  }
