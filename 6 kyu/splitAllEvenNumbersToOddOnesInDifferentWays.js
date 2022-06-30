@@ -41,7 +41,7 @@ I have also created other katas. Take a look if you enjoyed this kata!
 */
 
 const splitAllEvenNumbers = (numbers, way) => {
-    const factorial = num => {
+    const largestOddDiv = num => {
         let i = num / 2
         while (i % 2 == 0)
             i = i / 2
@@ -49,7 +49,7 @@ const splitAllEvenNumbers = (numbers, way) => {
     }
     const differentWays = n => {
         if (way === 0) {
-            if (n / 2 === factorial(n)) {
+            if (n / 2 === largestOddDiv(n)) {
                 return [n / 2, n / 2]
             } else {
                 return [(n / 2) - 1, (n / 2) + 1]
@@ -57,7 +57,7 @@ const splitAllEvenNumbers = (numbers, way) => {
         } else if (way === 1) {
             return [1, n - 1]
         } else if (way === 2) {
-            let largestOdd = factorial(n)
+            let largestOdd = largestOddDiv(n)
             let numOdd = n / largestOdd
             return [...Array(numOdd).fill(largestOdd)]
         } else {
