@@ -14,12 +14,5 @@ Good luck and enjoy!
 */
 
 const wave = str => {
-    let arr = []
-    for (let i = 0; i < str.length; i++)
-        if (str[i] === ' ') {
-            continue
-        } else {
-            arr.push(str.slice(0, i) + str.charAt(i).toUpperCase() + str.slice(i + 1))
-        }
-    return arr
+    return [...Array(str.length).fill(str)].map((s, i) => str[i] == ' ' ? '' : str.slice(0, i) + s.charAt(i).toUpperCase() + str.slice(i + 1)).filter(el => el != '')
 }
