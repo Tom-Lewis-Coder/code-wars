@@ -26,7 +26,7 @@ Do not post an issue in my solution without checking if your returned string doe
 const tops = msg => {
   let arr = []
   msg.length > 1000 ? arr = [...Array(Math.ceil(msg.length / 100)).fill(1)] :
-    arr = [...Array(Math.ceil(msg.length)).fill(1)]
+    arr = [...Array(msg.length).fill(1)]
   return arr.map((el, ind) => el + (4 * ind))
     .map((el, ind, arr) => msg[arr.slice(0, ind + 1).reduce((a, b) => a + b)])
     .reverse().join('')
