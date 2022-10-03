@@ -37,32 +37,31 @@ DATA STRUCTURESALGORITHMS
 
 const validSolution = board => {
   let addRow = board.every(arr => arr.reduce((acc, cv) => acc + cv) == 45)
-
-  let addCol = [board.map((n, i) => n[0]),
-    board.map((n, i) => n[1]),
-    board.map((n, i) => n[2]),
-    board.map((n, i) => n[3]),
-    board.map((n, i) => n[4]),
-    board.map((n, i) => n[5]),
-    board.map((n, i) => n[6]),
-    board.map((n, i) => n[7]),
-    board.map((n, i) => n[8])
+  let addCol = [board.map(n => n[0]),
+    board.map(n => n[1]),
+    board.map(n => n[2]),
+    board.map(n => n[3]),
+    board.map(n => n[4]),
+    board.map(n => n[5]),
+    board.map(n => n[6]),
+    board.map(n => n[7]),
+    board.map(n => n[8])
   ].every(arr => arr.reduce((acc, cv) => acc + cv) == 45)
 
   let addBy3Square1 = [board[0], board[1], board[2]]
   let addBy3Square2 = [board[3], board[4], board[5]]
   let addBy3Square3 = [board[6], board[7], board[8]]
 
-  let by3Square = [addBy3Square1.map((n, i) => n[0]).reduce((acc, cv) => acc + cv) +
-    addBy3Square1.map((n, i) => n[1]).reduce((acc, cv) => acc + cv) +
-    addBy3Square1.map((n, i) => n[2]).reduce((acc, cv) => acc + cv)
-  ] == 45 && [addBy3Square2.map((n, i) => n[3]).reduce((acc, cv) => acc + cv) +
-    addBy3Square2.map((n, i) => n[4]).reduce((acc, cv) => acc + cv) +
-    addBy3Square2.map((n, i) => n[5]).reduce((acc, cv) => acc + cv)
-  ] == 45 && [addBy3Square3.map((n, i) => n[6]).reduce((acc, cv) => acc + cv) +
-    addBy3Square3.map((n, i) => n[7]).reduce((acc, cv) => acc + cv) +
-    addBy3Square3.map((n, i) => n[8]).reduce((acc, cv) => acc + cv)
+  let by3Square = [addBy3Square1.map(n => n[0]).reduce((acc, cv) => acc + cv) +
+    addBy3Square1.map(n => n[1]).reduce((acc, cv) => acc + cv) +
+    addBy3Square1.map(n => n[2]).reduce((acc, cv) => acc + cv)
+  ] == 45 && [addBy3Square2.map(n => n[3]).reduce((acc, cv) => acc + cv) +
+    addBy3Square2.map(n => n[4]).reduce((acc, cv) => acc + cv) +
+    addBy3Square2.map(n => n[5]).reduce((acc, cv) => acc + cv)
+  ] == 45 && [addBy3Square3.map(n => n[6]).reduce((acc, cv) => acc + cv) +
+    addBy3Square3.map(n => n[7]).reduce((acc, cv) => acc + cv) +
+    addBy3Square3.map(n => n[8]).reduce((acc, cv) => acc + cv)
   ] == 45
-
-  return addRow && addCol && by3Square == true
+  
+  return addRow && addCol && by3Square
 }
