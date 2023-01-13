@@ -16,7 +16,6 @@ function cleanString(s) {
   let revArr = s.split('').reverse()
   const rec = a => {
     a.splice(a.lastIndexOf('#'), 2)
-    return a
   }
   while (revArr.includes('#')) {
     rec(revArr)
