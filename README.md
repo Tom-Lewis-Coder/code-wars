@@ -2,4 +2,4 @@
 
 Description - Solutions to CodeWars programming tasks
 
-Language - JavaScript
+Language - JavaScript, TypeScript
